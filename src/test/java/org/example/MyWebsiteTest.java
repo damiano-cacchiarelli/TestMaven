@@ -14,10 +14,6 @@ public class MyWebsiteTest {
 
     @BeforeEach
     void startConfiguration(){
-        //String projectPath = System.getProperty("user.dir");
-        //System.setProperty("webdriver.chrome.driver", projectPath + "/drivers/chromedriver.exe");
-        //driver = new ChromeDriver();
-
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         driver = new ChromeDriver(options);
