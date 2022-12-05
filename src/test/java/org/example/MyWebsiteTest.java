@@ -1,21 +1,26 @@
 package org.example;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class MyWebsiteTest {
     private WebDriver driver;
 
     @BeforeEach
     void startConfiguration(){
-        String projectPath = System.getProperty("user.dir");
+        //String projectPath = System.getProperty("user.dir");
+        //System.setProperty("webdriver.chrome.driver", projectPath + "/drivers/chromedriver.exe");
+        //driver = new ChromeDriver();
 
-        System.setProperty("webdriver.chrome.driver", projectPath + "/drivers/chromedriver.exe");
-        driver = new ChromeDriver();
+        WebDriverManager.chromedriver().setup();
+        ChromeOptions options = new ChromeOptions();
+        driver = new ChromeDriver(options);
     }
 
     @Test

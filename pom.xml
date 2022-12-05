@@ -86,6 +86,14 @@
       <version>4.6.0</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+    <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>5.3.1</version>
+    </dependency>
+
+
     <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
@@ -101,6 +109,16 @@
     </dependency>
 
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.22.0</version>
+      </plugin>
+    </plugins>
+  </build>
 
 
 </project>

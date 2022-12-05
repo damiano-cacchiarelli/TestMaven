@@ -1,10 +1,12 @@
 package org.example;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.sql.Driver;
 
@@ -14,10 +16,9 @@ public class SeleniumTest {
 
     @BeforeEach
     void startConfiguration(){
-        String projectPath = System.getProperty("user.dir");
-
-        System.setProperty("webdriver.chrome.driver", projectPath + "/drivers/chromedriver.exe");
-        driver = new ChromeDriver();
+        WebDriverManager.chromedriver().setup();
+        ChromeOptions options = new ChromeOptions();
+        driver = new ChromeDriver(options);
     }
 
     @Test
@@ -57,7 +58,7 @@ public class SeleniumTest {
         driver.findElements(By.className("type-portfolio-title")).forEach(e -> {
             String text = e.findElement(By.tagName("a")).getText();
             text = text.toLowerCase();
-            System.out.println(text);
+            //System.out.println(text);
             Assertions.assertTrue(text.contains("bprove"));
         });
     }

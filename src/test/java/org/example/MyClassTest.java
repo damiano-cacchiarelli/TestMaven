@@ -14,7 +14,7 @@ public class MyClassTest
     @DisplayName("Name")
     public void testMaven(){
         MyClass tester = new MyClass();
-        assertEquals(50,tester.multiply(5,2));
+        assertEquals(50,tester.multiply(5,10));
     }
 
 }
